@@ -191,9 +191,8 @@ export default function DocumentsPage() {
                 <p>
                   All source documents contained within this repository are verified authentic files
                   pertaining to the LaxmanDeep ecosystem, Swiss LaxmanDeep AI FINTECH, WiBioCard, and
-                  Fortress Cyber. Download permissions and printing controls are enforced per document
-                  classification tier. Private and due-diligence records are protected by cryptographic
-                  access-control policies.
+                  Fortress Cyber. Documents are rendered directly within our secure in-browser reader
+                  under strict institutional governance policies.
                 </p>
               </div>
               <div className="policy-action">

@@ -237,28 +237,12 @@ export const AdminModerationDrawer: React.FC<AdminModerationDrawerProps> = ({
                       <label>
                         <input
                           type="checkbox"
-                          checked={doc.allowDownload}
-                          onChange={(e) =>
-                            handleDocVisibilityChange(
-                              doc.id,
-                              doc.visibility,
-                              e.target.checked,
-                              doc.allowPrint
-                            )
-                          }
-                        />
-                        Allow Downloads
-                      </label>
-
-                      <label>
-                        <input
-                          type="checkbox"
                           checked={doc.allowPrint}
                           onChange={(e) =>
                             handleDocVisibilityChange(
                               doc.id,
                               doc.visibility,
-                              doc.allowDownload,
+                              false,
                               e.target.checked
                             )
                           }

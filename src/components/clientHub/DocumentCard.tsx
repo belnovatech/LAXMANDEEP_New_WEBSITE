@@ -4,7 +4,6 @@ import {
   FaFilePdf,
   FaFileWord,
   FaEye,
-  FaDownload,
   FaLock,
   FaBuilding,
   FaCalendarDays,
@@ -15,14 +14,12 @@ import "./documentCard.css";
 interface DocumentCardProps {
   document: ClientDocument;
   onView: (doc: ClientDocument) => void;
-  onDownload?: (doc: ClientDocument) => void;
   onRequestAccess?: (doc: ClientDocument) => void;
 }
 
 export const DocumentCard: React.FC<DocumentCardProps> = ({
   document: doc,
   onView,
-  onDownload,
   onRequestAccess
 }) => {
   const isPrivate = doc.visibility === "private";
@@ -45,20 +42,7 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
     }
   };
 
-  const handleDownloadClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (!doc.allowDownload) return;
-    if (onDownload) {
-      onDownload(doc);
-    } else {
-      const link = window.document.createElement("a");
-      link.href = doc.fileUrl;
-      link.download = doc.title.replace(/[^a-zA-Z0-9_-]/g, "_") + (doc.fileFormat === "PDF" ? ".pdf" : ".docx");
-      window.document.body.appendChild(link);
-      link.click();
-      window.document.body.removeChild(link);
-    }
-  };
+
 
   return (
     <div className={`lxd-doc-card ${isPrivate ? "is-private" : ""}`}>
@@ -151,24 +135,6 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
             >
               <FaEye /> View Document
             </button>
-          )}
-
-          {doc.allowDownload ? (
-            <button
-              className="lxd-doc-btn download"
-              onClick={handleDownloadClick}
-              title="Download Document"
-            >
-              <FaDownload />
-              <span className="btn-text">PDF</span>
-            </button>
-          ) : (
-            <span
-              className="lxd-doc-restricted-tag"
-              title="Downloads restricted by document governance policy"
-            >
-              <FaLock /> Protected
-            </span>
           )}
         </div>
       </div>
