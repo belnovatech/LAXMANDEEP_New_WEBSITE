@@ -76,6 +76,14 @@ const Footer = () => {
             Clients
           </a>
 
+          <a href="#" onClick={(e) => { e.preventDefault(); handleNavigate("/client-hub"); }}>
+            Client Hub
+          </a>
+
+          <a href="#" onClick={(e) => { e.preventDefault(); handleNavigate("/client-hub/ideas"); }}>
+            Idea Portal
+          </a>
+
           <a href="#" onClick={(e) => { e.preventDefault(); handleNavigate("/contact"); }}>
             Contact
           </a>
