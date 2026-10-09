@@ -5,7 +5,6 @@ import {
   FaXmark,
   FaFilePdf,
   FaFileWord,
-  FaDownload,
   FaPrint,
   FaExpand,
   FaCompress,
@@ -93,15 +92,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
     setIsFullscreen(!isFullscreen);
   };
 
-  const handleDownload = () => {
-    if (!doc.allowDownload) return;
-    const link = window.document.createElement("a");
-    link.href = doc.fileUrl;
-    link.download = doc.title.replace(/[^a-zA-Z0-9_-]/g, "_") + (doc.fileFormat === "PDF" ? ".pdf" : ".docx");
-    window.document.body.appendChild(link);
-    link.click();
-    window.document.body.removeChild(link);
-  };
+
 
   const handlePrint = () => {
     if (!doc.allowPrint) return;
@@ -211,20 +202,9 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
               </button>
             )}
 
-            {doc.allowDownload && !isDocConfidential ? (
-              <button
-                className="lxd-v-btn download-btn"
-                onClick={handleDownload}
-                title="Download Document File"
-              >
-                <FaDownload />
-                <span>Download</span>
-              </button>
-            ) : (
-              <span className="lxd-v-tag restricted" title="Download protected by governance">
-                <FaLock /> Read Only
-              </span>
-            )}
+            <span className="lxd-v-tag restricted" title="In-browser reading protected by governance">
+              <FaLock /> In-Browser Reader
+            </span>
 
             <button
               className="lxd-v-btn share-btn"

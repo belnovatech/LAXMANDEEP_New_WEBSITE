@@ -14,7 +14,7 @@ export const INITIAL_DOCUMENTS: ClientDocument[] = [
     fileUrl: "/documents/LaxamndeepSwiss_Strategic_Investment_Programme_USD119M.pdf",
     fileSize: "327 KB",
     visibility: "public",
-    allowDownload: true,
+    allowDownload: false,
     allowPrint: true,
     publishDate: "2026-03-15",
     disclaimer:
@@ -40,7 +40,7 @@ export const INITIAL_DOCUMENTS: ClientDocument[] = [
     fileUrl: "/documents/Request for Strategic Meeting.pdf",
     fileSize: "314 KB",
     visibility: "public",
-    allowDownload: true,
+    allowDownload: false,
     allowPrint: true,
     publishDate: "2026-03-20",
     disclaimer:
@@ -66,7 +66,7 @@ export const INITIAL_DOCUMENTS: ClientDocument[] = [
     fileUrl: "/documents/WiBioCard_Distributor_Business_Plan_ROI.pdf",
     fileSize: "165 KB",
     visibility: "public",
-    allowDownload: true,
+    allowDownload: false,
     allowPrint: true,
     publishDate: "2026-03-22",
     disclaimer:
@@ -92,7 +92,7 @@ export const INITIAL_DOCUMENTS: ClientDocument[] = [
     fileUrl: "/documents/Fortress_MSSP_Business_Plan_ROI.pdf",
     fileSize: "410 KB",
     visibility: "public",
-    allowDownload: true,
+    allowDownload: false,
     allowPrint: true,
     publishDate: "2026-03-25",
     disclaimer:
