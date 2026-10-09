@@ -48,6 +48,12 @@ export default function Navbar() {
         </li>
 
         <li>
+          <Link to="/client-hub" onClick={() => setMenuOpen(false)}>
+            Client Hub
+          </Link>
+        </li>
+
+        <li>
           <Link to="/contact" onClick={() => setMenuOpen(false)}>
             Contact
           </Link>
